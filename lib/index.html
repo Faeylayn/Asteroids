@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DrunkenCircles</title>
+
+  <style>
+    html, body, canvas {
+      padding: 0px;
+      margin: 0px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="game-canvas"></canvas>
+<script src = game.js> </script>
+<script src = gameView.js> </script>
+<script src = utils.js> </script>
+<script src = movingObject.js> </script>
+<script src = asteroid.js> </script>
+<script src = bullet.js> </script>
+<script src = ship.js> </script>
+
+<script>
+  var canvasEl = document.getElementById("game-canvas");
+
+  canvasEl.height = window.innerHeight;
+  canvasEl.width = window.innerWidth;
+
+  var game = new Asteroids.Game(canvasEl.width, canvasEl.height, 20)
+  new Asteroids.GameView(canvasEl, game).start()
+</script>
+</body>
+</html>
