@@ -13,6 +13,7 @@ var GameView = Asteroids.GameView = function(asteroidCanvas, game) {
   };
   this.fire = false;
   this.pause = false;
+  this.bindKeyHandlers();
 };
 
 GameView.prototype.drawStats = function () {
@@ -33,7 +34,7 @@ GameView.prototype.start = function() {
   //   ctx.drawImage(img, 0, 0);
   // };
   this.drawInstructions()
-  this.bindKeyHandlers()
+
   window.interval = setInterval((function () {
     if (this.pause === false) {
     ctx.drawImage(img, 0, 0)
