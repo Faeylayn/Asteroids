@@ -2,25 +2,25 @@
 <html>
 
 <head>
-  <title>Angela Dobbs Page</title>
+  <title>Asteroids</title>
 
 
 </head>
 
 <body class="group">
-  <h1 class="you-win"></h1>
+  <h1 class="title">Asteroids!</h1>
   <div class="game-canvas group">
-
-
-  <canvas id="game-canvas"></canvas>
-  <h1>Asteroids!</h1>
-  <section class="info-sidebar group">
-
-    <ul class="stats">
+    <ul class="hud">
 
     </ul>
-    <span class="instructions">
-    </span>
+
+  <canvas id="game-canvas"></canvas>
+
+  <section class="info-sidebar group">
+
+
+    <p class="instructions">
+    </p>
 
   </section>
 </div>
@@ -33,14 +33,14 @@
 <script src = asteroid.js> </script>
 <script src = bullet.js> </script>
 <script src = ship.js> </script>
-<script src=keymaster.js></script>
+
 <LINK REL=StyleSheet HREF="asteroids.css">
 
 <script>
   var canvasEl = document.getElementById("game-canvas");
 
-  canvasEl.height = 600;
-  canvasEl.width = 900;
+  canvasEl.height = (window.innerHeight/4) * 3;
+  canvasEl.width = (window.innerWidth/4) * 3;
 
   var game = new Asteroids.Game(canvasEl.width, canvasEl.height, 10)
   new Asteroids.GameView(canvasEl, game).start()

@@ -39,21 +39,30 @@ input, textarea {
 /* --- BOARD --- */
 
 .game-canvas {
-
+  position: relative;
+  height: 80%;
+  width: 80%;
+  float: left;
   margin: 150px;
-  float: left
+}
+
+.hud {
+  position: absolute;
+  color: #fff;
+  top: 10px;
+  left: 10px;
 }
 
 #game-canvas {
-  background-image: url('http://wallpaper4me.com/images/wallpapers/asteroid_storm_train_w1.jpeg');
+  background-image: url('./asteroid_storm.jpeg');
   border: 2px solid black;
   float: left
 }
 
 .info-sidebar {
   float: left;
-  border: 2px solid black;
-  width: 900px
+
+  width: 100%;
 
 }
 
@@ -62,10 +71,41 @@ input, textarea {
 }
 
 .instructions {
-  float: right;
+  float: left;
   width: 500px;
+  border: 2px solid black;
 }
 
 body {
   background: #aaa
+}
+
+.you-win {
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  left: 35%;
+  top: 25%;
+  background: red;
+  opacity: .9;
+}
+
+.text {
+  position: relative;
+  text-align: center;
+  top: 30%;
+}
+
+
+.new-game {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #ccc;
+
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
 }

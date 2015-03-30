@@ -17,8 +17,8 @@ var GameView = Asteroids.GameView = function(asteroidCanvas, game) {
 };
 
 GameView.prototype.drawStats = function () {
-  $(".stats").empty();
-  $(".stats").append("<li>Lives Left: " + this.game.lives + "</li>")
+  $(".hud").empty();
+  $(".hud").append("<li>Lives Left: " + this.game.lives + "</li>")
 }
 
 GameView.prototype.drawInstructions = function () {
@@ -26,9 +26,10 @@ GameView.prototype.drawInstructions = function () {
 }
 
 GameView.prototype.start = function() {
+
   var img = new Image();
   var ctx = this.ctx
-  $(".you-win").empty()
+  $(".you-win").remove()
 
   // img.onload = function () {
   //   ctx.drawImage(img, 0, 0);
@@ -63,8 +64,9 @@ GameView.prototype.bindKeyHandlers = function () {
   $(".game-canvas").on("click", ".new-game", function (event) {
     var canvasEl = $("#game-canvas")
     canvasEl.empty()
-    canvasEl.height = 600;
-    canvasEl.width = 900;
+    canvasEl.height = (window.innerHeight/4) * 3;
+    canvasEl.width = (window.innerWidth/4) * 3;
+
 
     this.game = new Asteroids.Game(canvasEl.width, canvasEl.height, 10)
     this.start()
@@ -146,11 +148,5 @@ GameView.prototype.AdjustThrust = function () {
     this.game.ship.fire()
   }
 }
-  // $(document).on("keydown", 39, function(){ this.game.ship.power('right') }.bind(this))
-  // $(document).on("keydown", 40, function(){ this.game.ship.power('down') }.bind(this))
- // key('up', function(){ this.game.ship.power('up') }.bind(this));
- // key('down', function(){ this.game.ship.power('down') }.bind(this));
- // key('left', function(){ this.game.ship.power('left') }.bind(this));
- // key('right', function(){ this.game.ship.power('right') }.bind(this));
- // key('space', function(){ this.game.ship.fire() }.bind(this));
+
 }) ()

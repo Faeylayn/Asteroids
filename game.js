@@ -11,7 +11,7 @@ var Game = Asteroids.Game = function (dimx, dimy, numAsteroids) {
   this.addAsteroids();
   this.ship = new Asteroids.Ship(this);
   this.bullets = [];
-  this.lives = 5;
+  this.lives = 1;
   this.GameOver = false
 };
 
@@ -82,8 +82,9 @@ Game.prototype.checkCollisions = function () {
           this.lives -= 1
           if (this.lives < 1) {
             clearInterval(window.interval)
-            $(".you-win").html("YOU LOSE!")
-            $(".stats").append("<button class='new-game'>New Game!</button>")
+            $(".game-canvas").prepend("<strong class='you-win'> </strong>")
+            $(".you-win").html("<h1 class='text'>YOU LOSE!<br></h1>")
+            $(".text").append("<button class='new-game'>New Game!</button>")
           }
           playerObjs[j].relocate()
 
@@ -102,9 +103,10 @@ Game.prototype.step = function (ctx) {
   this.draw(ctx);
   this.ship.drawNose(ctx);
   if (this.asteroids.length === 0) {
+    $(".game-canvas").prepend("<strong class='you-win'> </strong>")
     $(".you-win").html("YOU ARE A WINNER!")
     clearInterval(window.interval)
-    $(".stats").append("<button class='new-game'>New Game!</button>")
+    $(".you-win").append("<button class='new-game'>New Game!</button>")
   }
 }
 
