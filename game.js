@@ -11,7 +11,7 @@ var Game = Asteroids.Game = function (dimx, dimy, numAsteroids) {
   this.addAsteroids();
   this.ship = new Asteroids.Ship(this);
   this.bullets = [];
-  this.lives = 1;
+  this.lives = 5;
   this.GameOver = false
 };
 
