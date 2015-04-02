@@ -15,6 +15,7 @@ button, article, footer, small, canvas {
   vertical-align: inherit;
   color: inherit;
   background: transparent;
+  font-family: sans-serif;
 }
 
 ul {
@@ -40,10 +41,10 @@ input, textarea {
 
 .game-canvas {
   position: relative;
-  height: 80%;
-  width: 80%;
+  height: 90%;
+  width: 95%;
   float: left;
-  margin: 150px;
+
 }
 
 .hud {
@@ -72,9 +73,26 @@ input, textarea {
 
 .instructions {
   float: left;
+  position: absolute;
+  display: none;
   width: 500px;
   border: 2px solid black;
+  background: #ccc;
+  right: 0;
 }
+
+.display-instructions {
+  float: right;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.display-instructions:hover .instructions {
+  display: block;
+  z-index: 1;
+}
+
 
 body {
   background: #aaa

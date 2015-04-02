@@ -12,7 +12,8 @@ var Game = Asteroids.Game = function (dimx, dimy, numAsteroids) {
   this.ship = new Asteroids.Ship(this);
   this.bullets = [];
   this.lives = 5;
-  this.GameOver = false
+  this.GameOver = false;
+  this.points = 0;
 };
 
 Game.DEFAULT_COLOR = "#FFFFFF"
@@ -89,6 +90,7 @@ Game.prototype.checkCollisions = function () {
           playerObjs[j].relocate()
 
         } else if (playerObjs[j] instanceof Bullet) {
+          this.points += 1
           this.handleAsteroid(i)
           this.removeBullet(j-1)
         }
