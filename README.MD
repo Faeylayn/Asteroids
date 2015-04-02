@@ -2,9 +2,9 @@ Asteroids
 
 A re-creation of the arcade classic game.
 
-[Live link][site]
+[Live link]
 
-[site]: angeladobbs.us/Asteroids
+angeladobbs.us/Asteroids
 
 Features
 
