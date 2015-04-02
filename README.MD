@@ -4,7 +4,7 @@ A re-creation of the arcade classic game.
 
 [Live link][site]
 
-[site] angeladobbs.us/Asteroids
+[site]: www.angeladobbs.us/Asteroids
 
 Features
 
