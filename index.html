@@ -8,14 +8,13 @@
 </head>
 
 <body class="group">
-  <h1 class="title">Asteroids!</h1>
 
-  <button class='display-instructions'>Instructions
-  <p class="instructions">
-    The up/down arrows will change your thrust while the left/right arrows will change your directions. The spacebar will fire and the enter key will pause the game. You will begin the game invulnerable, and you won't be able to fire until your invulnverability turns off.
-  </p>
-</button>
   <div class="game-canvas group">
+    <button class='display-instructions'>Instructions
+    <p class="instructions">
+      The up/down arrows will change your thrust while the left/right arrows will change your directions. The spacebar will fire and the enter key will pause the game. You will begin the game invulnerable, and you won't be able to fire until your invulnverability turns off.
+    </p>
+  </button>
     <ul class="hud">
 
     </ul>
@@ -44,8 +43,8 @@
 <script>
   var canvasEl = document.getElementById("game-canvas");
 
-  canvasEl.height = (window.innerHeight) *.9;
-  canvasEl.width = (window.innerWidth) * .99;
+  canvasEl.height = (window.innerHeight)*.99;
+  canvasEl.width = (window.innerWidth)*.99;
 
   var game = new Asteroids.Game(canvasEl.width, canvasEl.height, 10)
   new Asteroids.GameView(canvasEl, game).start()
